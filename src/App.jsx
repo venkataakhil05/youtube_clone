@@ -47,7 +47,7 @@ const appRouter = createBrowserRouter([
     ],
   },
 ], {
-  basename: "/youtube_clone",
+  basename: import.meta.env.BASE_URL.replace(/\/$/, ""),
 });
 
 function App() {
