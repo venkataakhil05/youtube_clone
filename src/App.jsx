@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -23,7 +23,7 @@ const AppLayout = () => {
 };
 
 // Router Configuration
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
     path: "/",
     element: <AppLayout />,
@@ -46,9 +46,7 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
-], {
-  basename: import.meta.env.BASE_URL.replace(/\/$/, ""),
-});
+]);
 
 function App() {
   return (
